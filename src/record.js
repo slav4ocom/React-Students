@@ -20,11 +20,9 @@ recordRoutes.route("/react").get(function (req, res) {
     //res.send("React");
 });
 
-function ReadHomeworks() {
-    var sql = require("mssql");
-    var result = null;
 
-    // config for your database
+async function GetHomeworks() {
+    var sql = require('mssql');
     var config = {
         user: 'testlogin',
         password: 'testpass',
@@ -37,69 +35,23 @@ function ReadHomeworks() {
 
     };
 
-    // connect to your database
-    sql.connect(config, function (err) {
-
-        if (err)
-            console.log(err);
-
-        // create Request object
-        var request = new sql.Request();
-
-        // query to the database and get the records
-        request.query('select * from Homeworks', function (err, recordset) {
-
-            if (err)
-                console.log(err);
-
-            // send records as a response
-            //res.send(recordset);
-            return recordset;
-            //result = recordset;
-        });
-    });
-
-    //return result;
+    try {
+        //await sql.connect('Server=localhost;Database=WebStudent;User Id=testlogin;Password=testpass;');
+        await sql.connect(config);
+        const result = await sql.query("select * from Homeworks");
+        console.dir(result);
+        return result;
+    } catch (err) {
+        console.dir("opala greshcica...");
+        console.dir(err);
+    }
 }
-
-recordRoutes.route("/homeworks").get(function (req, res) {
+recordRoutes.route("/homeworks").get(async function (req, res) {
     //res.send(ReadHomeworks());
-    var sql = require("mssql");
-    var result = null;
-
-    // config for your database
-    var config = {
-        user: 'testlogin',
-        password: 'testpass',
-        server: 'localhost',
-        database: 'WebStudent',
-        options: {
-            encrypt: false, // for azure
-            trustServerCertificate: true // change to true for local dev / self-signed certs
-        }
-
-    };
-
-    // connect to your database
-    sql.connect(config, function (err) {
-
-        if (err)
-            console.log(err);
-
-        // create Request object
-        var request = new sql.Request();
-
-        // query to the database and get the records
-        request.query('select * from Homeworks', function (err, recordset) {
-
-            if (err)
-                console.log(err);
-
-            // send records as a response
-            res.send(recordset);
-        });
-    });
-
+    //var result = "alo";
+    //ReadHomeworks();
+    //console.log("opa");
+    res.send(await GetHomeworks());
 });
 
-module.exports = recordRoutes;
+module.exports = { recordRoutes, GetHomeworks };

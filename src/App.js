@@ -95,10 +95,22 @@ class Home extends React.Component {
 }
 
 class Students extends React.Component {
+
     render() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("demo").innerHTML =
+              this.responseText;
+            }
+          };
+        
+        xhttp.open("GET", "students.txt", true);
+        xhttp.send();
         return (
             <div>
                 This is students
+                <div id="demo"></div>
             </div>
         );
     }
@@ -108,6 +120,7 @@ class Homeworks extends React.Component {
     render() {
         return (
             <div>
+
                 This is homeworks
             </div>
         );

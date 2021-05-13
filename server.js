@@ -6,7 +6,9 @@ const app = express();
 const port = 8080;
 //app.use(cors());
 app.use(express.json());
-app.use(require("./src/record.js"));
+var routes = require('./src/record');
+app.use(routes.recordRoutes);
+//app.use(require("./src/record/"));
 
 var fs = require('fs');
 
@@ -19,7 +21,7 @@ app.get('/*', function (req, res) {
     var fileName = req.url;
     var fileExt = fileName.split(".")[1];
 
-    console.log(fileExt);
+    //console.log(fileExt);
 
     fs.readFile("./src/" + req.url, function (err, data) {
         if (err) {
