@@ -77,7 +77,7 @@ class Page extends React.Component {
 
 
 
-    }//
+    }
 }
 
 class Home extends React.Component {
