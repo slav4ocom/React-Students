@@ -38,7 +38,7 @@ async function GetHomeworks() {
     try {
         //await sql.connect('Server=localhost;Database=WebStudent;User Id=testlogin;Password=testpass;');
         await sql.connect(config);
-        const result = await sql.query("select * from Homeworks");
+        const result = await sql.query("select [Id] from Homeworks");
         console.dir(result);
         return result;
     } catch (err) {
@@ -52,6 +52,15 @@ recordRoutes.route("/homeworks").get(async function (req, res) {
     //ReadHomeworks();
     //console.log("opa");
     res.send(await GetHomeworks());
+    //res.send("This is homeworks response from backend.")
+});
+
+recordRoutes.route("/students.json").get(function (req, res) {
+    res.send(
+        {
+            "student1": "prlamen"
+        }
+    );
 });
 
 module.exports = { recordRoutes, GetHomeworks };

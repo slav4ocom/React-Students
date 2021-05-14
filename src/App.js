@@ -1,5 +1,6 @@
 'use strict';
 
+
 class Main extends React.Component {
     render() {
         return (
@@ -80,17 +81,23 @@ class Page extends React.Component {
     }
 }
 
-function loadDoc() {
+
+function loadDoc(documentName, elementId) {
     var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-       document.getElementById("demo").innerHTML = this.responseText;
-      }
-    };
-    xhttp.open("GET", "ajax_info.txt", true);
+
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && (this.status == 200 || this.status == 304)) {
+            //document.getElementById(elementId).innerHTML = this.responseText;
+            //elementId = this.responseText;
+            //tablica = "return from loadDoc()";
+            tablica = this.responseText;
+        }
+    }
+    xhttp.open("GET", documentName, false);
     xhttp.send();
-  }
-  
+
+}
+
 class Home extends React.Component {
     render() {
         return (
@@ -109,14 +116,14 @@ class Students extends React.Component {
 
     render() {
         var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
+        xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-              document.getElementById("demo").innerHTML =
-              this.responseText;
+                document.getElementById("demo").innerHTML =
+                    this.responseText;
             }
-          };
-        
-        xhttp.open("GET", "students.txt", true);
+        };
+
+        xhttp.open("GET", "students.json", true);
         xhttp.send();
         return (
             <div>
@@ -127,12 +134,18 @@ class Students extends React.Component {
     }
 }
 
+var tablica = "таблица";
+//tablica = "dsadsadsasda";
+
 class Homeworks extends React.Component {
     render() {
+        //loadDoc("homeworks", "homeworksTable");
+        loadDoc("homeworks", tablica);
         return (
             <div>
-
                 This is homeworks
+                <br/>
+                {tablica}
             </div>
         );
     }
@@ -158,3 +171,8 @@ class Reakciq extends React.Component {
     }
 }
 
+//var t = document.createElement("div");
+//t.setAttribute("id","homeworksTable");
+////t.id = "homeworksTable";
+//document.getElementById("root").appendChild(t);
+//document.getElementById("homeworksTable").innerHTML = "<h3>opala...</h3>";
