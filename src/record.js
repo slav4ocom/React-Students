@@ -47,12 +47,7 @@ async function GetHomeworks() {
     }
 }
 recordRoutes.route("/homeworks").get(async function (req, res) {
-    //res.send(ReadHomeworks());
-    //var result = "alo";
-    //ReadHomeworks();
-    //console.log("opa");
     res.send(await GetHomeworks());
-    //res.send("This is homeworks response from backend.")
 });
 
 recordRoutes.route("/students.json").get(function (req, res) {
