@@ -119,7 +119,6 @@ var studentsTable = {
 };
 
 class Students extends React.Component {
-
     render() {
         loadDoc("students.txt", studentsTable);
         return (
