@@ -4,3 +4,4 @@ This is web platform for students. Actually it is Single Page Application (SPA) 
 
 At this initial point of development it uses in browser Babel compiler. Now for tests I use existing MS SQL database.
 
+use http://localhost:8080/react to open start page of project
