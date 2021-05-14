@@ -30,6 +30,8 @@ class NavBar extends React.Component {
 
 var page = "Home";
 
+
+
 function SetPage(pagename) {
     page = pagename;
 
@@ -82,15 +84,15 @@ class Page extends React.Component {
 }
 
 
-function loadDoc(documentName, elementId) {
+function loadDoc(documentName, returnObject) {
     var xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && (this.status == 200 || this.status == 304)) {
             //document.getElementById(elementId).innerHTML = this.responseText;
-            //elementId = this.responseText;
             //tablica = "return from loadDoc()";
-            tablica = this.responseText;
+            //tablica = this.responseText;
+            returnObject.value = this.responseText;
         }
     }
     xhttp.open("GET", documentName, false);
@@ -112,29 +114,27 @@ class Home extends React.Component {
     }
 }
 
+var studentsTable = {
+    value: ""
+};
+
 class Students extends React.Component {
 
     render() {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("demo").innerHTML =
-                    this.responseText;
-            }
-        };
-
-        xhttp.open("GET", "students.json", true);
-        xhttp.send();
+        loadDoc("students.txt", studentsTable);
         return (
             <div>
                 This is students
-                <div id="demo"></div>
+                <br />
+                {studentsTable.value}
             </div>
         );
     }
 }
 
-var tablica = "таблица";
+var tablica = {
+    value: "таблица"
+};
 //tablica = "dsadsadsasda";
 
 class Homeworks extends React.Component {
@@ -144,8 +144,8 @@ class Homeworks extends React.Component {
         return (
             <div>
                 This is homeworks
-                <br/>
-                {tablica}
+                <br />
+                {tablica.value}
             </div>
         );
     }
