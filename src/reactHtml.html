@@ -10,29 +10,13 @@
 </head>
 
 <body>
+    <script src="/include/react.development.js" crossorigin></script>
+    <script src="/include/react-dom.development.js" crossorigin></script>
 
-    <div id="root" type="text/babel"></div>
-
-
-    <script type="text/babel" src="App.js"></script>
-    <script type="text/babel">
-        
-        ReactDOM.render(
-            <Main />,
-            document.getElementById('root')
-        );
-
-        //var t = document.createElement("div");
-        ////t.setAttribute("id", "homeworksTable");
-        //t.id = "homeworksTable";
-        //document.getElementById("root").appendChild(t);
-        //document.getElementById("homeworksTable").innerHTML = "<h3>opala...</h3>";
-    </script>
-
-    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js" crossorigin=></script>
-    <!-- Load our React component. -->
+    <div type="module" id="root"></div>
+    
+    <script src="/dist/App.js"></script>
+    
 </body>
 
 </html>

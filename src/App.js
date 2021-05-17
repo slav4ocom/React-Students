@@ -1,6 +1,5 @@
 'use strict';
 
-
 class Main extends React.Component {
     render() {
         return (
@@ -84,18 +83,23 @@ class Page extends React.Component {
 }
 
 
-function loadDoc(documentName, returnObject) {
+function loadDoc(documentName, returnObject, updateElement) {
     var xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && (this.status == 200 || this.status == 304)) {
-            //document.getElementById(elementId).innerHTML = this.responseText;
-            //tablica = "return from loadDoc()";
-            //tablica = this.responseText;
             returnObject.value = this.responseText;
+            document.getElementById(updateElement).innerHTML = this.responseText;
+            
+
+            //ReactDOM.render(
+            //    <Main />,
+            //    document.getElementById('root')
+            //);
+
         }
     }
-    xhttp.open("GET", documentName, false);
+    xhttp.open("GET", documentName, true);
     xhttp.send();
 
 }
@@ -118,14 +122,28 @@ var studentsTable = {
     value: ""
 };
 
+function GetArray() {
+    //var json = tablica.value;
+    var json = '{"proba": "rezultat", "proba2": "rezultat2"}';
+    var obj = JSON.parse(json);
+    var res = [];
+    for (var i in obj) {
+        res.push(obj[i]);
+    }
+    return res;
+    //return tablica.value;
+}
 class Students extends React.Component {
     render() {
-        loadDoc("students.txt", studentsTable);
+        const studentsElement = "studentsDiv";
+        loadDoc("students.txt", studentsTable, studentsElement);
         return (
-            <div>
+            <div id={studentsElement}>
                 This is students
                 <br />
                 {studentsTable.value}
+                <br />
+                {GetArray()}
             </div>
         );
     }
@@ -138,10 +156,10 @@ var tablica = {
 
 class Homeworks extends React.Component {
     render() {
-        //loadDoc("homeworks", "homeworksTable");
-        loadDoc("homeworks", tablica);
+        const homeWorksElement = "homeworksDiv";
+        loadDoc("homeworks", tablica, homeWorksElement);
         return (
-            <div>
+            <div id={homeWorksElement}>
                 This is homeworks
                 <br />
                 {tablica.value}
@@ -170,8 +188,7 @@ class Reakciq extends React.Component {
     }
 }
 
-//var t = document.createElement("div");
-//t.setAttribute("id","homeworksTable");
-////t.id = "homeworksTable";
-//document.getElementById("root").appendChild(t);
-//document.getElementById("homeworksTable").innerHTML = "<h3>opala...</h3>";
+ReactDOM.render(
+    <Main />,
+    document.getElementById('root')
+);
