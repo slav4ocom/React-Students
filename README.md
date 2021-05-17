@@ -13,4 +13,4 @@ Browser loads precompiled files from <b>dist</b> folder.
 
 Also browser loads dependencies locally from <b>include</b> folder. This is <i>react.development.js</i> and <i>react-dom.development.js</i> actually downloaded from https://unpkg.com/ 
 
-Also I achieve asynchronous retrieve homeworks data. It is represented as JSON at one "<div>" element. Next task is to create real table with homeworks data retrieved from MS SQL.
+Also I achieve asynchronous retrieve homeworks data, using AJAX. It is represented as JSON at one "<div>" element. Next task is to create real table with homeworks data retrieved from MS SQL.
