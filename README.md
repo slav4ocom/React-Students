@@ -9,7 +9,8 @@ use http://localhost:8080/react to open start page of project
 # 18.may.2021 
 
 Finally I succeed to make babel compiler precompile <b>src</b> .js source files on server side.
+Browser loads precompiled files from <b>dist</b> folder.
 
-Also browser loads dependencies locally from <b>include</b> folder
+Also browser loads dependencies locally from <b>include</b> folder. This is <i>react.development.js</i> and <i>react-dom.development.js</i> actually downloaded from https://unpkg.com/ 
 
 Also I achieve asynchronous retrieve homeworks data. It is represented as JSON at one "<div>" element. Next task is to create real table with homeworks data retrieved from MS SQL.
