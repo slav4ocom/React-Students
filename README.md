@@ -6,7 +6,9 @@ At this initial point of development it uses in browser Babel compiler. Now for 
 
 use http://localhost:8080/react to open start page of project
 
-You need to install <b>express</b> and <b>mssql</b> packages for current testing. Also MSSQL database server is needed to be running for tests with database, but this is not critical and you can still view functionality of web site anyway.
+You need to install <b>express</b> and <b>mssql</b> packages for current testing.
+If you want to develop project, instalation of babel compiler is needed.
+ Also MSSQL database server is needed to be running for tests with database, but this is not critical and you can still view functionality of web site anyway.
 
 # 18.may.2021 
 
