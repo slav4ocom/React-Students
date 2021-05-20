@@ -15,7 +15,7 @@ If you want to develop project, instalation of babel compiler is needed.
 Finally I succeed to make babel compiler precompile <b>src</b> .js source files on server side.
 Browser loads precompiled files from <b>dist</b> folder.
 
-<b>This project uses only one web server for backend.</b>
+<b>This project uses only one web server for backend. Project is configured to automatically compile .js source files in /src with babel compiler</b>
 
 Also browser loads dependencies locally from <b>include</b> folder. This is <i>react.development.js</i> and <i>react-dom.development.js</i> actually downloaded from https://unpkg.com/ 
 
