@@ -90,7 +90,7 @@ function loadDoc(documentName, returnObject, updateElement) {
         if (this.readyState == 4 && (this.status == 200 || this.status == 304)) {
             returnObject.value = this.responseText;
             document.getElementById(updateElement).innerHTML = this.responseText;
-            
+
 
             //ReactDOM.render(
             //    <Main />,
@@ -159,10 +159,19 @@ class Homeworks extends React.Component {
         const homeWorksElement = "homeworksDiv";
         loadDoc("homeworks", tablica, homeWorksElement);
         return (
-            <div id={homeWorksElement}>
-                This is homeworks
+            <div>
+                курец
+                <table>
+                    <th>No.</th>
+                    <th>Ученик</th>
+                    <th>Занятие</th>
+                    <th>Домашно</th>
+                </table>
+                <div id={homeWorksElement}>
+                    This is homeworks
                 <br />
-                {tablica.value}
+                    {tablica.value}
+                </div>
             </div>
         );
     }
