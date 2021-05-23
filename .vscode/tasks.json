@@ -2,7 +2,7 @@
     "version": "2.0.0",
     "tasks": [{
         "label": "echotest",
-        "command": "npx babel src --watch --out-dir lib", // Could be any other shell command
+        "command": "npx babel src --watch --out-dir dist", // Could be any other shell command
         //"command": "dir",
         //"args": ["babel src -watch --out-dir dist"],
         "type": "shell",

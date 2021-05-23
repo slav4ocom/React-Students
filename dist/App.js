@@ -139,10 +139,7 @@ function loadDoc(documentName, returnObject, updateElement) {
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && (this.status == 200 || this.status == 304)) {
       returnObject.value = this.responseText;
-      document.getElementById(updateElement).innerHTML = this.responseText; //ReactDOM.render(
-      //    <Main />,
-      //    document.getElementById('root')
-      //);
+      document.getElementById(updateElement).innerHTML = this.responseText;
     }
   };
 

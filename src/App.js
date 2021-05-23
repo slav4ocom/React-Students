@@ -91,12 +91,6 @@ function loadDoc(documentName, returnObject, updateElement) {
             returnObject.value = this.responseText;
             document.getElementById(updateElement).innerHTML = this.responseText;
 
-
-            //ReactDOM.render(
-            //    <Main />,
-            //    document.getElementById('root')
-            //);
-
         }
     }
     xhttp.open("GET", documentName, true);
