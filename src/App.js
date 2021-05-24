@@ -155,7 +155,7 @@ class Homeworks extends React.Component {
         loadDoc("homeworks", tablica, homeWorksElement);
         return (
             <div>
-                курец
+                таблица
                 <table>
                     <th>No.</th>
                     <th>Ученик</th>

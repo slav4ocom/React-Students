@@ -230,7 +230,7 @@ var Homeworks = /*#__PURE__*/function (_React$Component6) {
     value: function render() {
       var homeWorksElement = "homeworksDiv";
       loadDoc("homeworks", tablica, homeWorksElement);
-      return /*#__PURE__*/React.createElement("div", null, "\u043A\u0443\u0440\u0435\u0446", /*#__PURE__*/React.createElement("table", null, /*#__PURE__*/React.createElement("th", null, "No."), /*#__PURE__*/React.createElement("th", null, "\u0423\u0447\u0435\u043D\u0438\u043A"), /*#__PURE__*/React.createElement("th", null, "\u0417\u0430\u043D\u044F\u0442\u0438\u0435"), /*#__PURE__*/React.createElement("th", null, "\u0414\u043E\u043C\u0430\u0448\u043D\u043E")), /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/React.createElement("div", null, "\u0442\u0430\u0431\u043B\u0438\u0446\u0430", /*#__PURE__*/React.createElement("table", null, /*#__PURE__*/React.createElement("th", null, "No."), /*#__PURE__*/React.createElement("th", null, "\u0423\u0447\u0435\u043D\u0438\u043A"), /*#__PURE__*/React.createElement("th", null, "\u0417\u0430\u043D\u044F\u0442\u0438\u0435"), /*#__PURE__*/React.createElement("th", null, "\u0414\u043E\u043C\u0430\u0448\u043D\u043E")), /*#__PURE__*/React.createElement("div", {
         id: homeWorksElement
       }, "This is homeworks", /*#__PURE__*/React.createElement("br", null), tablica.value));
     }
