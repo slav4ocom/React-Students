@@ -98,6 +98,7 @@ function loadDoc(documentName, returnObject, updateElement) {
 
             }
             document.getElementById(updateElement).innerHTML = tablica.value[0];
+            
 
         }
     }
@@ -177,23 +178,13 @@ class TableRow extends React.Component {
 }
 
 
-class AddRowsData extends React.Component {
-    render() {
-        return (
-            <div>
-                <TableRow />
-                <TableRow />
-                <TableRow />
-                <TableRow />
-                <TableRow />
-                <TableRow />
-                <TableRow />
-                <TableRow />
-                <TableRow />
-            </div>
-        );
+function AddRowsData() {
+    for (var i = 0; i < 10; i++) {
+        document.getElementById("tableBody").appendChild(new TableRow().render());
     }
 }
+
+
 
 class Homeworks extends React.Component {
     render() {
@@ -205,17 +196,20 @@ class Homeworks extends React.Component {
             <div>
                 таблица
                 <table>
-                    <tr>
-                        <th>No.</th>
-                        <th>Ученик</th>
-                        <th>Занятие</th>
-                        <th>Домашно</th>
-                    </tr>
-                    <TableRow />
-                    <tr>
-                        <AddRowsData />
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Ученик</th>
+                            <th>Занятие</th>
+                            <th>Домашно</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                    </tbody>
+
+
                 </table>
+                
                 <div id={homeWorksElement}>
                     This is homeworks
                 <br />
