@@ -156,6 +156,45 @@ var tablica = {
 };
 //tablica = "dsadsadsasda";
 
+
+function FillTable() {
+    for (var i = 0; i < 10; i++) {
+
+    }
+}
+
+class TableRow extends React.Component {
+    render() {
+        return (
+            <tr>
+                <td>column 1</td>
+                <td>column 2</td>
+                <td>column 3</td>
+                <td>column 4</td>
+            </tr>
+        );
+    }
+}
+
+
+class AddRowsData extends React.Component {
+    render() {
+        return (
+            <div>
+                <TableRow />
+                <TableRow />
+                <TableRow />
+                <TableRow />
+                <TableRow />
+                <TableRow />
+                <TableRow />
+                <TableRow />
+                <TableRow />
+            </div>
+        );
+    }
+}
+
 class Homeworks extends React.Component {
     render() {
         var obj = JSON.parse('{ "name":"John", "age":30, "city":"New York"}');
@@ -166,10 +205,16 @@ class Homeworks extends React.Component {
             <div>
                 таблица
                 <table>
-                    <th>No.</th>
-                    <th>Ученик</th>
-                    <th>Занятие</th>
-                    <th>Домашно</th>
+                    <tr>
+                        <th>No.</th>
+                        <th>Ученик</th>
+                        <th>Занятие</th>
+                        <th>Домашно</th>
+                    </tr>
+                    <TableRow />
+                    <tr>
+                        <AddRowsData />
+                    </tr>
                 </table>
                 <div id={homeWorksElement}>
                     This is homeworks

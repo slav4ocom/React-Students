@@ -223,15 +223,61 @@ var tablica = {
   value: "таблица"
 }; //tablica = "dsadsadsasda";
 
-var Homeworks = /*#__PURE__*/function (_React$Component6) {
-  _inherits(Homeworks, _React$Component6);
+function FillTable() {
+  for (var i = 0; i < 10; i++) {}
+}
 
-  var _super6 = _createSuper(Homeworks);
+var TableRow = /*#__PURE__*/function (_React$Component6) {
+  _inherits(TableRow, _React$Component6);
+
+  var _super6 = _createSuper(TableRow);
+
+  function TableRow() {
+    _classCallCheck(this, TableRow);
+
+    return _super6.apply(this, arguments);
+  }
+
+  _createClass(TableRow, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, "column 1"), /*#__PURE__*/React.createElement("td", null, "column 2"), /*#__PURE__*/React.createElement("td", null, "column 3"), /*#__PURE__*/React.createElement("td", null, "column 4"));
+    }
+  }]);
+
+  return TableRow;
+}(React.Component);
+
+var AddRowsData = /*#__PURE__*/function (_React$Component7) {
+  _inherits(AddRowsData, _React$Component7);
+
+  var _super7 = _createSuper(AddRowsData);
+
+  function AddRowsData() {
+    _classCallCheck(this, AddRowsData);
+
+    return _super7.apply(this, arguments);
+  }
+
+  _createClass(AddRowsData, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(TableRow, null), /*#__PURE__*/React.createElement(TableRow, null), /*#__PURE__*/React.createElement(TableRow, null), /*#__PURE__*/React.createElement(TableRow, null), /*#__PURE__*/React.createElement(TableRow, null), /*#__PURE__*/React.createElement(TableRow, null), /*#__PURE__*/React.createElement(TableRow, null), /*#__PURE__*/React.createElement(TableRow, null), /*#__PURE__*/React.createElement(TableRow, null));
+    }
+  }]);
+
+  return AddRowsData;
+}(React.Component);
+
+var Homeworks = /*#__PURE__*/function (_React$Component8) {
+  _inherits(Homeworks, _React$Component8);
+
+  var _super8 = _createSuper(Homeworks);
 
   function Homeworks() {
     _classCallCheck(this, Homeworks);
 
-    return _super6.apply(this, arguments);
+    return _super8.apply(this, arguments);
   }
 
   _createClass(Homeworks, [{
@@ -240,7 +286,7 @@ var Homeworks = /*#__PURE__*/function (_React$Component6) {
       var obj = JSON.parse('{ "name":"John", "age":30, "city":"New York"}');
       var homeWorksElement = "homeworksDiv";
       loadDoc("homeworks", tablica, homeWorksElement);
-      return /*#__PURE__*/React.createElement("div", null, "\u0442\u0430\u0431\u043B\u0438\u0446\u0430", /*#__PURE__*/React.createElement("table", null, /*#__PURE__*/React.createElement("th", null, "No."), /*#__PURE__*/React.createElement("th", null, "\u0423\u0447\u0435\u043D\u0438\u043A"), /*#__PURE__*/React.createElement("th", null, "\u0417\u0430\u043D\u044F\u0442\u0438\u0435"), /*#__PURE__*/React.createElement("th", null, "\u0414\u043E\u043C\u0430\u0448\u043D\u043E")), /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/React.createElement("div", null, "\u0442\u0430\u0431\u043B\u0438\u0446\u0430", /*#__PURE__*/React.createElement("table", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "No."), /*#__PURE__*/React.createElement("th", null, "\u0423\u0447\u0435\u043D\u0438\u043A"), /*#__PURE__*/React.createElement("th", null, "\u0417\u0430\u043D\u044F\u0442\u0438\u0435"), /*#__PURE__*/React.createElement("th", null, "\u0414\u043E\u043C\u0430\u0448\u043D\u043E")), /*#__PURE__*/React.createElement(TableRow, null), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement(AddRowsData, null))), /*#__PURE__*/React.createElement("div", {
         id: homeWorksElement
       }, "This is homeworks", /*#__PURE__*/React.createElement("br", null)));
     }
@@ -249,15 +295,15 @@ var Homeworks = /*#__PURE__*/function (_React$Component6) {
   return Homeworks;
 }(React.Component);
 
-var About = /*#__PURE__*/function (_React$Component7) {
-  _inherits(About, _React$Component7);
+var About = /*#__PURE__*/function (_React$Component9) {
+  _inherits(About, _React$Component9);
 
-  var _super7 = _createSuper(About);
+  var _super9 = _createSuper(About);
 
   function About() {
     _classCallCheck(this, About);
 
-    return _super7.apply(this, arguments);
+    return _super9.apply(this, arguments);
   }
 
   _createClass(About, [{
@@ -270,15 +316,15 @@ var About = /*#__PURE__*/function (_React$Component7) {
   return About;
 }(React.Component);
 
-var Reakciq = /*#__PURE__*/function (_React$Component8) {
-  _inherits(Reakciq, _React$Component8);
+var Reakciq = /*#__PURE__*/function (_React$Component10) {
+  _inherits(Reakciq, _React$Component10);
 
-  var _super8 = _createSuper(Reakciq);
+  var _super10 = _createSuper(Reakciq);
 
   function Reakciq() {
     _classCallCheck(this, Reakciq);
 
-    return _super8.apply(this, arguments);
+    return _super10.apply(this, arguments);
   }
 
   _createClass(Reakciq, [{
