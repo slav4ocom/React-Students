@@ -133,13 +133,22 @@ var Page = /*#__PURE__*/function (_React$Component3) {
   return Page;
 }(React.Component);
 
+var tableData = [];
+
 function loadDoc(documentName, returnObject, updateElement) {
   var xhttp = new XMLHttpRequest();
 
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && (this.status == 200 || this.status == 304)) {
-      returnObject.value = this.responseText;
-      document.getElementById(updateElement).innerHTML = this.responseText;
+      returnObject.value = this.responseText; //tablica.value = JSON.parse(this.responseText).recordset[0].Id;
+
+      tablica.value = JSON.parse(this.responseText).recordset;
+
+      for (var i = 0; i < 10; i++) {
+        tableData.push(tablica.value[i].Id);
+      }
+
+      document.getElementById(updateElement).innerHTML = tablica.value[0];
     }
   };
 
@@ -228,11 +237,12 @@ var Homeworks = /*#__PURE__*/function (_React$Component6) {
   _createClass(Homeworks, [{
     key: "render",
     value: function render() {
+      var obj = JSON.parse('{ "name":"John", "age":30, "city":"New York"}');
       var homeWorksElement = "homeworksDiv";
       loadDoc("homeworks", tablica, homeWorksElement);
       return /*#__PURE__*/React.createElement("div", null, "\u0442\u0430\u0431\u043B\u0438\u0446\u0430", /*#__PURE__*/React.createElement("table", null, /*#__PURE__*/React.createElement("th", null, "No."), /*#__PURE__*/React.createElement("th", null, "\u0423\u0447\u0435\u043D\u0438\u043A"), /*#__PURE__*/React.createElement("th", null, "\u0417\u0430\u043D\u044F\u0442\u0438\u0435"), /*#__PURE__*/React.createElement("th", null, "\u0414\u043E\u043C\u0430\u0448\u043D\u043E")), /*#__PURE__*/React.createElement("div", {
         id: homeWorksElement
-      }, "This is homeworks", /*#__PURE__*/React.createElement("br", null), tablica.value));
+      }, "This is homeworks", /*#__PURE__*/React.createElement("br", null)));
     }
   }]);
 

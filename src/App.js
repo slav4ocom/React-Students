@@ -83,6 +83,7 @@ class Page extends React.Component {
     }
 }
 
+var tableData = [];
 
 function loadDoc(documentName, returnObject, updateElement) {
     var xhttp = new XMLHttpRequest();
@@ -90,7 +91,13 @@ function loadDoc(documentName, returnObject, updateElement) {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && (this.status == 200 || this.status == 304)) {
             returnObject.value = this.responseText;
-            document.getElementById(updateElement).innerHTML = this.responseText;
+            //tablica.value = JSON.parse(this.responseText).recordset[0].Id;
+            tablica.value = JSON.parse(this.responseText).recordset;
+            for (var i = 0; i < 10; i++) {
+                tableData.push(tablica.value[i].Id);
+
+            }
+            document.getElementById(updateElement).innerHTML = tablica.value[0];
 
         }
     }
@@ -151,6 +158,8 @@ var tablica = {
 
 class Homeworks extends React.Component {
     render() {
+        var obj = JSON.parse('{ "name":"John", "age":30, "city":"New York"}');
+
         const homeWorksElement = "homeworksDiv";
         loadDoc("homeworks", tablica, homeWorksElement);
         return (
@@ -165,7 +174,6 @@ class Homeworks extends React.Component {
                 <div id={homeWorksElement}>
                     This is homeworks
                 <br />
-                    {tablica.value}
                 </div>
             </div>
         );

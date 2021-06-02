@@ -26,7 +26,7 @@ async function GetHomeworks() {
     var config = {
         user: 'testlogin',
         password: 'testpass',
-        server: 'localhost',
+        server: '192.168.0.107',
         database: 'WebStudent',
         options: {
             encrypt: false, // for azure
